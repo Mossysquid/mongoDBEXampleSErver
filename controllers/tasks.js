@@ -1,11 +1,11 @@
-const User = require('../models/tasks')
+const Task = require('../models/tasks')
 
 module.exports = {
     createUser: async (req, res) =>{
         console.log(`create task`);
         try{
-            const {email, taskname, age} = req.body
-            const task = new Task({email, taskname, age})
+            const {taskname} = req.body
+            const task = new Task({taskname})
             task.save()
             console.log(task);
             res.json(task);
